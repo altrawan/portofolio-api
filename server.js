@@ -10,7 +10,6 @@ const httpStatus = require('http-status');
 const http = require('http');
 const socketIo = require('socket.io');
 const listenSocket = require('./src/socket');
-const ApiError = require('./src/utils/ApiError');
 const { PORT, NODE_ENV } = process.env;
 
 const app = express();
@@ -51,11 +50,13 @@ app.use(bodyParser.json());
 app.set('views', `${__dirname}/src/views`);
 app.set('view engine', 'ejs');
 
+app.use(express.static(__dirname + '/public'));
+
 // root route
-app.get('/', (req, res) => res.sendFile(`${__dirname}/public/index.html`));
+app.get('/', (req, res) => res.sendFile(`${__dirname}/index.html`));
 
 // send back a 404 error for any unknown api request
-app.use((req, res, next) => res.sendFile(`${__dirname}/public/404.html`));
+app.use((req, res, next) => res.sendFile(`${__dirname}/404.html`));
 
 // setting socket
 const server = http.createServer(app);

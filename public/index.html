@@ -1,15 +1,395 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Read Me</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font: 400 16px/1.5 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: #111;
+      background-color: #fdfdfd;
+      -webkit-text-size-adjust: 100%;
+      -webkit-font-feature-settings: 'kern' 1;
+      -moz-font-feature-settings: 'kern' 1;
+      -o-font-feature-settings: 'kern' 1;
+      font-feature-settings: 'kern' 1;
+      font-kerning: normal;
+      padding: 30px;
+    }
+
+    @media only screen and (max-width: 600px) {
+      body {
+        padding: 5px;
+      }
+
+      main {
+        padding: 0px 20px 20px 20px !important;
+      }
+    }
+
+    main {
+      margin: 0px;
+      max-width: 900px;
+      border: 1px solid #e1e4e8;
+      padding: 10px 40px;
+      padding-bottom: 20px;
+      border-radius: 2px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    hr {
+      color: #bbb;
+      background-color: #bbb;
+      height: 1px;
+      flex: 0 1 auto;
+      margin: 1em 0;
+      padding: 0;
+      border: none;
+    }
+
+    /**
+ * Links
+ */
+    a {
+      color: #0366d6;
+      text-decoration: none;
+    }
+
+    a:visited {
+      color: #0366d6;
+    }
+
+    a:hover {
+      color: #0366d6;
+      text-decoration: underline;
+    }
+
+    pre {
+      background-color: #f6f8fa;
+      border-radius: 3px;
+      font-size: 85%;
+      line-height: 1.45;
+      overflow: auto;
+      padding: 16px;
+    }
+
+    /**
+  * Code blocks
+  */
+
+    code {
+      background-color: rgba(27, 31, 35, 0.05);
+      border-radius: 3px;
+      font-size: 85%;
+      margin: 0;
+      word-wrap: break-word;
+      padding: 0.2em 0.4em;
+      font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
+        monospace;
+    }
+
+    pre>code {
+      background-color: transparent;
+      border: 0;
+      display: inline;
+      line-height: inherit;
+      margin: 0;
+      overflow: visible;
+      padding: 0;
+      word-wrap: normal;
+      font-size: 100%;
+    }
+
+    /**
+ * Blockquotes
+ */
+    blockquote {
+      margin-left: 30px;
+      margin-top: 0px;
+      margin-bottom: 16px;
+      border-left-width: 3px;
+      padding: 0 1em;
+      color: #828282;
+      border-left: 4px solid #e8e8e8;
+      padding-left: 15px;
+      font-size: 18px;
+      letter-spacing: -1px;
+      font-style: italic;
+    }
+
+    blockquote * {
+      font-style: normal !important;
+      letter-spacing: 0;
+      color: #6a737d !important;
+    }
+
+    /**
+ * Tables
+ */
+    table {
+      border-spacing: 2px;
+      display: block;
+      font-size: 14px;
+      overflow: auto;
+      width: 100%;
+      margin-bottom: 16px;
+      border-spacing: 0;
+      border-collapse: collapse;
+    }
+
+    td {
+      padding: 6px 13px;
+      border: 1px solid #dfe2e5;
+    }
+
+    th {
+      font-weight: 600;
+      padding: 6px 13px;
+      border: 1px solid #dfe2e5;
+    }
+
+    tr {
+      background-color: #fff;
+      border-top: 1px solid #c6cbd1;
+    }
+
+    table tr:nth-child(2n) {
+      background-color: #f6f8fa;
+    }
+
+    /**
+ * Others
+ */
+
+    img {
+      max-width: 100%;
+    }
+
+    p {
+      line-height: 24px;
+      font-weight: 400;
+      font-size: 16px;
+      color: #24292e;
+    }
+
+    ul {
+      margin-top: 0;
+    }
+
+    li {
+      color: #24292e;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    li+li {
+      margin-top: 0.25em;
+    }
+
+    * {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
+        sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+      color: #24292e;
+    }
+
+    a:visited {
+      color: #0366d6;
+    }
+
+    h1,
+    h2,
+    h3 {
+      border-bottom: 1px solid #eaecef;
+      color: #111;
+      /* Darker */
+    }
+
+    h4 {
+      font-size: 24px;
+      margin-bottom: -5px;
+    }
+  </style>
 </head>
 
 <body>
-  <h1>Welcome</h1>
+  <main>
+    <div id="top"></div>
+    <!-- PROJECT LOGO -->
+    <p><br /></p>
+    <div align="center">
+      <a href="https://github.com/altrawan/portofolio-api">
+        <img src="./assets/logo.png" alt="Logo" width="140px" />
+      </a>
+
+      <h4 align="center">Portofolio : Backend Portofolio</h4>
+
+      <p align="center">
+        Create a Node.js app for building portofolio RESTful APIs using Express.
+        <br />
+        <a href="#table-of-contents"><strong>Explore the docs »</strong></a>
+        <br />
+        <br />
+        <a href="https://altrawan.herokuapp.com/">View Web Service</a>
+        ·
+        <a href="https://github.com/altrawan/portofolio-api/issues">Report Bug</a>
+        ·
+        <a href="https://github.com/altrawan/portofolio-api/issues">Request Feature</a>
+      </p>
+    </div>
+    <!-- TABLE OF CONTENTS -->
+    <h2 id="table-of-contents">Table of Contents</h2>
+    <p>
+    <details><br />
+      <summary>Table of Contents</summary><br />
+      </p>
+      <ol>
+        <li>
+          <a href="#about-the-project">About The Project</a>
+          <ul>
+            <li><a href="#built-with">Built With</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#getting-started">Getting Started</a>
+          <ul>
+            <li><a href="#prerequisites">Prerequisites</a></li>
+            <li><a href="#requirements">Requirements</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#setup-env-example">Setup .env example</a></li>
+          </ul>
+        </li>
+        <li><a href="#rest-api">REST API</a></li>
+        <li><a href="#contributing">Contributing</a></li>
+        <li><a href="#related-project">Related Project</a></li>
+        <li><a href="#contributing">Contributing</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#license">License</a></li>
+      </ol>
+      <p>
+    </details>
+    </p>
+    <!-- ABOUT THE PROJECT -->
+    <h2 id="about-the-project">About The Project</h2>
+    <p>Create a Node.js app for building portofolio RESTful APIs using Express.</p>
+    <h3 id="built-with">Built With</h3>
+    <p>This app was built with some technologies below:</p>
+    <ul>
+      <li><a href="https://nodejs.org/en/">Node.js</a></li>
+      <li><a href="https://expressjs.com/">Express.js</a></li>
+      <li><a href="https://jwt.io/">JSON Web Tokens</a></li>
+      <li><a href="https://sequelize.org/">Sequelize</a></li>
+      <li><a href="https://redis.io/">Redis</a></li>
+      <li><a href="https://nodemailer.com/about/">Nodemailer</a></li>
+      <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+      <li><a href="https://socket.io/">Socket.io</a></li>
+      <li><a href="https://ejs.co/">EJS</a></li>
+      <li>and other</li>
+    </ul>
+    <p align="right">(<a href="#top">back to top</a>)</p>
+    <!-- GETTING STARTED -->
+    <h2 id="getting-started">Getting Started</h2>
+    <h3 id="prerequisites">Prerequisites</h3>
+    <p>This is an example of how to list things you need to use the software and how to install them.</p>
+    <ul>
+      <li><a href="https://nodejs.org/en/download/">Node.js</a></li>
+    </ul>
+    <h3 id="requirements">Requirements</h3>
+    <ul>
+      <li><a href="https://nodejs.org/en/">Node.js</a></li>
+      <li><a href="https://www.getpostman.com/">Postman</a> for testing</li>
+      <li><a href="./portofolio.sql">Database</a></li>
+    </ul>
+    <h3 id="installation">Installation</h3>
+    <ul>
+      <li>Clone the Repo</li>
+    </ul>
+    <pre><code>git clone https://github.com/altrawan/portofolio-api.git</code></pre>
+    <ul>
+      <li>Go To Folder Repo</li>
+    </ul>
+    <pre><code>cd portofolio-api</code></pre>
+    <ul>
+      <li>Install Module</li>
+    </ul>
+    <pre><code>npm install</code></pre>
+    <ul>
+      <li>Make a new database and import <a href="./blanja.sql">telegram.sql</a></li>
+      <li><a href="#setup-env-example">Setup .env</a></li>
+      <li>Type <code>npm run dev</code> To Start Development</li>
+      <li>Type <code>npm run start</code> To Start Production</li>
+    </ul>
+    <p align="right">(<a href="#top">back to top</a>)</p>
+    <h3 id="setup-env-example">Setup .env example</h3>
+    <p>Create .env file in your root project folder.</p>
+    <pre><code class="env language-env"># app
+APP_NAME=
+NODE_ENV=
+PORT=
+API_URL=
+APP_CLIENT=
+
+# database
+DB_HOST=
+DB_USER=
+DB_PASSWORD=
+DB_NAME=
+DB_PORT=
+
+# jwt
+JWT_SECRET=
+JWT_EXPIRED=
+
+# google
+EMAIL_FROM=
+EMAIL_USER=
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+REDIRECT_URI=
+GMAIL_REFRESH_TOKEN=
+DRIVE_REFRESH_TOKEN=</code></pre>
+    <p align="right">(<a href="#top">back to top</a>)</p>
+    <h2 id="rest-api">REST API</h2>
+    <p>You can view my Postman collection <a
+        href="https://www.postman.com/warped-shadow-374852/workspace/realtime-chat/overview">here</a><br />
+      <br />
+      <a
+        href="https://app.getpostman.com/run-collection/19659051-c6105e73-8adf-43fa-ac97-915206fd49cd?action=collection%2Ffork&collection-url=entityId%3D19659051-c6105e73-8adf-43fa-ac97-915206fd49cd%26entityType%3Dcollection%26workspaceId%3D48100499-9974-4c89-8d1f-e53a8d5f8511"><img
+          src="./assets/button.svg" alt="Run in Postman" /></a>
+    </p>
+    <p align="right">(<a href="#top">back to top</a>)</p>
+    <!-- CONTRIBUTING -->
+    <h2 id="contributing">Contributing</h2>
+    <p>Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any
+      contributions you make are <strong>greatly appreciated</strong>.</p>
+    <ol>
+      <li>Fork the Project</li>
+      <li>Create your Feature Branch (<code>git checkout -b feature/AmazingFeature</code>)</li>
+      <li>Commit your Changes (<code>git commit -m 'Add some AmazingFeature'</code>)</li>
+      <li>Push to the Branch (<code>git push origin feature/AmazingFeature</code>)</li>
+      <li>Open a Pull Request</li>
+    </ol>
+    <p align="right">(<a href="#top">back to top</a>)</p>
+    <h2 id="related-project">Related Project</h2>
+    <p>🚀 <a href="https://github.com/altrawan/portofolio-api"><code>Backend Portofolio</code></a></p>
+    <p>🚀 <a href="https://github.com/altrawan/portofolio"><code>Frontend Portofolio</code></a></p>
+    <p>🚀 <a href="https://altrawan.herokuapp.com/"><code>Web Service</code></a></p>
+    <p>🚀 <a href="https://altrawan.vercel.app/"><code>Demo Portofolio</code></a></p>
+    <p align="right">(<a href="#top">back to top</a>)</p>
+    <h2 id="contact">Contact</h2>
+    <p>My Email : <a
+        href="&#x6d;&#x61;&#105;&#x6c;&#116;o&#58;&#109;&#x75;&#104;&#97;&#109;m&#97;da&#108;&#x69;&#x66;&#x70;&#x75;&#116;&#x72;&#97;8&#56;&#56;8&#x40;&#103;&#x6d;&#x61;&#105;l&#46;&#99;&#x6f;&#109;">&#x6d;&#x75;&#104;&#97;&#109;&#x6d;&#97;&#x64;&#x61;&#108;&#x69;&#102;&#112;&#117;&#x74;&#x72;a&#x38;&#56;&#x38;&#x38;&#64;&#103;m&#x61;&#x69;&#x6c;&#x2e;&#99;&#111;&#109;</a>
+    </p>
+    <p>Project Link: <a href="https://github.com/altrawan/portofolio-api">https://github.com/altrawan/portofolio-api</a>
+    </p>
+    <p align="right">(<a href="#top">back to top</a>)</p>
+    <h2 id="license">License</h2>
+    <p>Distributed under the <a href="/LICENSE">MIT</a> License.</p>
+    <p align="right">(<a href="#top">back to top</a>)</p>
+  </main>
 </body>
 
 </html>
