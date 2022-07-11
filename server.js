@@ -1,4 +1,6 @@
+require('dotenv').config();
 const express = require('express');
+const morgan = require('morgan');
 const helmet = require('helmet');
 const xss = require('xss-clean');
 const compression = require('compression');
@@ -53,9 +55,7 @@ app.set('view engine', 'ejs');
 app.get('/', (req, res) => res.sendFile(`${__dirname}/public/index.html`));
 
 // send back a 404 error for any unknown api request
-app.use((req, res, next) => {
-  next(new ApiError(httpStatus.NOT_FOUND, 'Not Found'));
-});
+app.use((req, res, next) => res.sendFile(`${__dirname}/public/404.html`));
 
 // setting socket
 const server = http.createServer(app);
