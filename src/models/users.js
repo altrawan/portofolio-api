@@ -9,6 +9,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Users.hasMany(models.Educations, {
+        foreignKey: 'user_id',
+        as: 'educations',
+      });
     }
   }
   Users.init(
@@ -27,6 +31,14 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         unique: true,
       },
+      password: {
+        type: DataTypes.STRING(255),
+        allowNull: false,
+      },
+      role: {
+        type: DataTypes.STRING(255),
+        allowNull: false,
+      },
       phone: {
         type: DataTypes.STRING(255),
         allowNull: false,
@@ -39,6 +51,10 @@ module.exports = (sequelize, DataTypes) => {
       description: {
         type: DataTypes.TEXT,
         allowNull: true,
+      },
+      photo: {
+        type: DataTypes.STRING(255),
+        allowNull: false,
       },
       twitter: {
         type: DataTypes.STRING(255),

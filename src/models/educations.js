@@ -1,7 +1,5 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Educations extends Model {
     /**
@@ -11,19 +9,57 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Educations.belongsTo(models.Users, {
+        foreignKey: 'user_id',
+        as: 'user',
+      });
     }
   }
-  Educations.init({
-    major: DataTypes.STRING,
-    school: DataTypes.STRING,
-    address: DataTypes.TEXT,
-    type: DataTypes.STRING,
-    start_date: DataTypes.DATE,
-    end_date: DataTypes.DATE,
-    image: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'Educations',
-  });
+  Educations.init(
+    {
+      id: {
+        type: DataTypes.UUID,
+        allowNull: false,
+        primaryKey: true,
+      },
+      user_id: {
+        type: DataTypes.UUID,
+        allowNull: false,
+      },
+      major: {
+        type: DataTypes.STRING(255),
+        allowNull: false,
+      },
+      school: {
+        type: DataTypes.STRING(255),
+        allowNull: false,
+      },
+      address: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+      },
+      type: {
+        type: DataTypes.STRING(255),
+        allowNull: false,
+      },
+      start_date: {
+        type: DataTypes.DATE,
+        allowNull: false,
+      },
+      end_date: {
+        type: DataTypes.DATE,
+        allowNull: false,
+      },
+      image: {
+        type: DataTypes.STRING(255),
+        allowNull: false,
+      },
+    },
+    {
+      sequelize,
+      tableName: 'educations',
+      modelName: 'Educations',
+    }
+  );
   return Educations;
 };

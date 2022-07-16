@@ -16,6 +16,14 @@ module.exports = {
         allowNull: false,
         unique: true,
       },
+      password: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      role: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       phone: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -27,6 +35,10 @@ module.exports = {
       },
       description: {
         type: Sequelize.TEXT,
+        allowNull: true,
+      },
+      photo: {
+        type: Sequelize.STRING,
         allowNull: true,
       },
       twitter: {
